@@ -53,7 +53,7 @@
         <string/>
        </property>
        <property name="pixmap">
-        <pixmap>:/new/images/mainpic</pixmap>
+        <pixmap resource="Sourse/sourse.qrc">:/new/img/English_language.png</pixmap>
        </property>
        <property name="scaledContents">
         <bool>false</bool>
@@ -158,6 +158,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="Sourse/sourse.qrc"/>
+ </resources>
  <connections/>
 </ui>

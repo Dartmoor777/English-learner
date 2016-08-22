@@ -240,8 +240,8 @@
    <string>English Learner</string>
   </property>
   <property name="windowIcon">
-   <iconset>
-    <normaloff>:/new/images/icon</normaloff>:/new/images/icon</iconset>
+   <iconset resource="Sourse/sourse.qrc">
+    <normaloff>:/new/img/English_language.jpg</normaloff>:/new/img/English_language.jpg</iconset>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -279,6 +279,8 @@
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="Sourse/sourse.qrc"/>
+ </resources>
  <connections/>
 </ui>
