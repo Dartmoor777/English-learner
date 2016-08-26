@@ -10,10 +10,10 @@ TARGET = English_V2
 TEMPLATE = app
 
 SOURCES += main.cpp\
-								mainwindow.cpp\
 								mainwin.cpp\
 								add.cpp\
-								study.cpp
+								study.cpp \
+    mainwindow.cpp
 
 HEADERS  += mainwindow.h\
 								mainwindow.h\

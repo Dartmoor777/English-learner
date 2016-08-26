@@ -241,7 +241,7 @@
   </property>
   <property name="windowIcon">
    <iconset resource="Sourse/sourse.qrc">
-    <normaloff>:/new/img/English_language.jpg</normaloff>:/new/img/English_language.jpg</iconset>
+    <normaloff>:/new/img/United-Kingdom-flag-icon.png</normaloff>:/new/img/United-Kingdom-flag-icon.png</iconset>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
