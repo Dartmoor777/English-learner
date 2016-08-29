@@ -21,9 +21,15 @@ private slots:
 
     void on_pushButton_clicked();
 
+    void on_lineEdit_textEdited(const QString &arg1);
+
 private:
     Ui::add *ui;
+    QPalette palette;
     QMap<QString, QString> *words;
+    QFile base;
+    int change;
+    QMap<QString, QString> anki;
 };
 
 #endif // ADD_H

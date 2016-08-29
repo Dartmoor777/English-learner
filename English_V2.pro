@@ -13,19 +13,22 @@ SOURCES += main.cpp\
 								mainwin.cpp\
 								add.cpp\
 								study.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    learn.cpp
 
 HEADERS  += mainwindow.h\
 								mainwindow.h\
 								mainwin.h\
 								add.h\
-								study.h
+								study.h \
+    learn.h
 
 FORMS    += mainwindow.ui\
 								mainwindow.ui\
 								mainwin.ui\
 								add.ui\
-								study.ui
+								study.ui \
+    learn.ui
 
 RESOURCES += \
     Sourse/sourse.qrc

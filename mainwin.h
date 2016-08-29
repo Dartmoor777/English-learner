@@ -17,11 +17,10 @@ class mainwin : public QWidget
     Q_OBJECT
 
 public:
-    QMap<QString, QString> words;
-    explicit mainwin(QWidget *parent = 0, QMainWindow *win = 0);
+    explicit mainwin(QWidget *parent = 0, QMainWindow *win = 0, QMap<QString, QString> *words = 0);
     ~mainwin();
-public slots:
-    void overwrite();
+//public slots:
+    //void overwrite();
 
 private slots:
     void on_pushButton_clicked();
@@ -29,10 +28,10 @@ private slots:
     void on_pushButton_2_clicked();
 
 private:
+    QMap<QString, QString> *words;
     Ui::mainwin *ui;
     QMainWindow *win;
-    QFile base;
-    int change;
+    //int change;
 };
 
 #endif // MAINWIN_H

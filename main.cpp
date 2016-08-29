@@ -6,7 +6,7 @@ int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
     MainWindow w;
-    mainwin *obj = new mainwin(&w, &w);
+    mainwin *obj = new mainwin(&w, &w, &w.words);
     w.setCentralWidget (obj);
     w.show();
 
