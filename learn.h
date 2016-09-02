@@ -2,6 +2,7 @@
 #define LEARN_H
 
 #include <QtWidgets>
+#include "study.h"
 
 namespace Ui {
 class learn;
@@ -12,16 +13,27 @@ class learn : public QWidget
     Q_OBJECT
 
 public:
-    explicit learn(QWidget *parent = 0, QMainWindow *win= 0, int but = 0);
+    explicit learn(QWidget *parent = 0, QMainWindow *win= 0, int but = 0, QMap<QString, QString> *words = 0);
     ~learn();
+public slots:
+    void next();
+    void disable();
+private slots:
+    void on_pushButton_6_clicked();
 
 private:
     QMainWindow *win;
+    QMap<QString, QString> *words;
+    QString getrand(bool IsItKey, QString except);
+    QList<int> list;
     Ui::learn *ui;
     void word_trans();
     void trans_word();
     void buttons();
     void listen();
+    QPalette palette_change();
+    QPalette pal;
+    bool reverse;
 };
 
 #endif // LEARN_H

@@ -71,7 +71,7 @@ void learn::next(){
         if (reverse)ui->label->setText (it.key());
         else ui->label->setText (it.value());
         QString textbut=reverse ? it.value ():it.key ();
-        int answer = qrand() % 5+1;
+        int answer = qrand() % 5 +1;
         QList<QString> rand;
         int t=0;
         do{

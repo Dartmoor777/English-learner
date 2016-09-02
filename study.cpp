@@ -30,6 +30,18 @@ void study::on_pushButton_clicked()
         box.warning (this, "Warning", "You have to have at least 5 words!");
         return;
     }
-    learn *obj = new learn(win, win, 1);
+    learn *obj = new learn(win, win, 1, words);
     win->setCentralWidget (obj);
+}
+
+void study::on_pushButton_2_clicked()
+{
+    if(words->size ()<5){
+        QMessageBox box;
+        box.warning (this, "Warning", "You have to have at least 5 words!");
+        return;
+    }
+    learn *obj = new learn(win, win, 2, words);
+    win->setCentralWidget (obj);
+
 }
