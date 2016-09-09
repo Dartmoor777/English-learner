@@ -34,6 +34,8 @@ private:
     QPalette palette_change();
     QPalette pal;
     bool reverse;
+    //bool eventFilter (QObject *, QEvent *);
+    void keyPressEvent (QKeyEvent *e);
 };
 
 #endif // LEARN_H

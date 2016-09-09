@@ -8,7 +8,6 @@ mainwin::mainwin(QWidget *parent, QMainWindow *win, QMap<QString, QString> *word
     ui->setupUi(this);
     this->words=words;
     this->win=win;
-    //connect(win, SIGNAL(destroyed()), this, SLOT(overwrite()));
 }
 
 mainwin::~mainwin()
@@ -29,5 +28,3 @@ void mainwin::on_pushButton_2_clicked()
     win->setCentralWidget (obj);
 }
 
-//void mainwin::overwrite (){
-//}

@@ -12,6 +12,7 @@ learn::learn(QWidget *parent, QMainWindow *win, int but, QMap<QString, QString> 
     connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(disable()));
     connect(ui->pushButton_4, SIGNAL(clicked()), this, SLOT(disable()));
     connect(ui->pushButton_5, SIGNAL(clicked()), this, SLOT(disable()));
+
     pal =ui->pushButton->palette();
     this->win = win;
     this->words=words;
@@ -54,6 +55,7 @@ void learn::next(){
             on_pushButton_6_clicked ();
             return;
         }
+        ui->pushButton->setFocus ();
         ui->pushButton->setDisabled (false);
         ui->pushButton_2->setDisabled (false);
         ui->pushButton_3->setDisabled (false);
@@ -137,7 +139,6 @@ QPalette learn::palette_change(){
 }
 
 QString learn::getrand(bool IsItKey, QString except){
-        qDebug() << "bug 2";
     QMap<QString, QString>::iterator it;
     QString check;
     do{
@@ -181,4 +182,10 @@ void learn::on_pushButton_6_clicked()
 {
     study  *obj = new study(win, win, words);
     win->setCentralWidget (obj);
+}
+
+void learn::keyPressEvent( QKeyEvent *e) {
+        if((e->key()==Qt::Key_1) ||  (e->key()==Qt::Key_2) || (e->key()==Qt::Key_3) || (e->key()==Qt::Key_4 || (e->key()==Qt::Key_5))/*&& (key->type ()==QKeyEvent::KeyPress)*/){
+        disable();
+        }
 }

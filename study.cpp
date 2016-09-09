@@ -1,6 +1,7 @@
 #include "study.h"
 #include "ui_study.h"
 #include "learn.h"
+#include "buttons.h"
 
 study::study(QWidget *parent, QMainWindow *win,QMap<QString, QString> *words) :
     QWidget(parent),
@@ -10,6 +11,7 @@ study::study(QWidget *parent, QMainWindow *win,QMap<QString, QString> *words) :
     this->win=win;
     this->words = words;
     ui->lcdNumber->display (words->count ());
+    ui->pushButton_4->setHidden (true);
 }
 
 study::~study()
@@ -44,4 +46,9 @@ void study::on_pushButton_2_clicked()
     learn *obj = new learn(win, win, 2, words);
     win->setCentralWidget (obj);
 
+}
+
+void study::on_pushButton_3_clicked(){
+    buttons *obj = new buttons(this, win, words, 0);
+    win->setCentralWidget (obj);
 }

@@ -14,21 +14,24 @@ SOURCES += main.cpp\
 								add.cpp\
 								study.cpp \
     mainwindow.cpp \
-    learn.cpp
+    learn.cpp \
+    buttons.cpp
 
 HEADERS  += mainwindow.h\
 								mainwindow.h\
 								mainwin.h\
 								add.h\
 								study.h \
-    learn.h
+    learn.h \
+    buttons.h
 
 FORMS    += mainwindow.ui\
 								mainwindow.ui\
 								mainwin.ui\
 								add.ui\
 								study.ui \
-    learn.ui
+    learn.ui \
+    buttons.ui
 
 RESOURCES += \
     Sourse/sourse.qrc
