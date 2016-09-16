@@ -15,7 +15,8 @@ SOURCES += main.cpp\
 								study.cpp \
     mainwindow.cpp \
     learn.cpp \
-    buttons.cpp
+    buttons.cpp \
+    repeat.cpp
 
 HEADERS  += mainwindow.h\
 								mainwindow.h\
@@ -23,7 +24,8 @@ HEADERS  += mainwindow.h\
 								add.h\
 								study.h \
     learn.h \
-    buttons.h
+    buttons.h \
+    repeat.h
 
 FORMS    += mainwindow.ui\
 								mainwindow.ui\
@@ -31,7 +33,8 @@ FORMS    += mainwindow.ui\
 								add.ui\
 								study.ui \
     learn.ui \
-    buttons.ui
+    buttons.ui \
+    repeat.ui
 
 RESOURCES += \
     Sourse/sourse.qrc

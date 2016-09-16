@@ -17,6 +17,7 @@ public:
     ~learn();
 public slots:
     void next();
+    void introNext();
     void disable();
 private slots:
     void on_pushButton_6_clicked();
@@ -26,16 +27,17 @@ private:
     QMap<QString, QString> *words;
     QString getrand(bool IsItKey, QString except);
     QList<int> list;
+    QList<int> immortalList;
     Ui::learn *ui;
     void word_trans();
     void trans_word();
-    void buttons();
-    void listen();
+    void introduce();
     QPalette palette_change();
     QPalette pal;
     bool reverse;
-    //bool eventFilter (QObject *, QEvent *);
     void keyPressEvent (QKeyEvent *e);
+    void fill();
+    QPushButton *getButton(int n);
 };
 
 #endif // LEARN_H

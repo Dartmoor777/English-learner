@@ -27,28 +27,38 @@ void study::on_pushButton_6_clicked()
 
 void study::on_pushButton_clicked()
 {
-    if(words->size ()<5){
-        QMessageBox box;
-        box.warning (this, "Warning", "You have to have at least 5 words!");
-        return;
-    }
-    learn *obj = new learn(win, win, 1, words);
+    if(check())return;
+    learn *obj = new learn(this, win, 1, words);
     win->setCentralWidget (obj);
 }
 
 void study::on_pushButton_2_clicked()
 {
-    if(words->size ()<5){
-        QMessageBox box;
-        box.warning (this, "Warning", "You have to have at least 5 words!");
-        return;
-    }
-    learn *obj = new learn(win, win, 2, words);
+    if(check())return;
+    learn *obj = new learn(this, win, 2, words);
     win->setCentralWidget (obj);
 
 }
 
 void study::on_pushButton_3_clicked(){
-    buttons *obj = new buttons(this, win, words, 0);
+    if(check())return;
+    QList<int> list;
+    buttons *obj = new buttons(this, win, words, list);
     win->setCentralWidget (obj);
 }
+
+void study::on_pushButton_5_clicked()
+{
+    if(check())return;
+    learn *obj = new learn(this, win, 3, words);
+    win->setCentralWidget (obj);
+}
+
+bool study::check(){
+    if(words->size ()<5){
+        QMessageBox box;
+        box.warning (this, "Warning", "You have to have at least 5 words!");
+        return true;
+    }else return false;
+}
+

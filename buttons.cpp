@@ -2,20 +2,26 @@
 #include "ui_buttons.h"
 #include "study.h"
 
-buttons::buttons(QWidget *parent, QMainWindow *win, QMap<QString, QString> *words, QList<int> *list) :
+buttons::buttons(QWidget *parent, QMainWindow *win, QMap<QString, QString> *words, QList<int> list) :
     QWidget(parent),
     ui(new Ui::buttons)
 {
     ui->setupUi(this);
+    remove= false;
+    current="";
+    origin = ui->label_2->palette ();
     this->words=words;
     this->win=win;
-    if(!list){
+    if(list.isEmpty ()){
         int size = words->count ();
         while(this->list.count ()!=5){
         int buf = qrand() % size;
         if(!this->list.contains (buf))this->list.append (buf);
         }
-    }else this->list=*list;
+    }else{
+        this->list=list;
+        remove=true;
+    }
     on_pushButton_32_clicked ();
 }
 
@@ -28,184 +34,383 @@ void buttons::on_pushButton_31_clicked()
 {
     study *obj = new study(win, win, words);
     win->setCentralWidget (obj);
+    return;
 }
 
 void buttons::on_pushButton_32_clicked(){
-        if(list.isEmpty ()){
-            on_pushButton_31_clicked ();
+        if((ui->label_2->isEnabled ()) && (!ui->label->text ().isEmpty ())){
+            ui->label_2->setText (current);
+            ui->label_2->setDisabled (true);
+            ui->pushButton_32->setText ("Next");
+            disable();
             return;
         }
+        if(list.isEmpty ()){
+            qDebug() << forRemove;
+            if(remove)for(int n=0;n<5;n++)words->remove (forRemove.at (n));
+             on_pushButton_31_clicked ();
+            return;
+        }
+        ui->pushButton_32->setText ("Don't know");
+        ui->label_2->setText ("");
+        ui->label_2->setDisabled (false);
         disable();
         QMap<QString, QString>::iterator it = words->begin ();
         it+=list.first ();
         list.removeFirst ();
         ui->label->setText (it.value ());
         QString word = it.key ();
-
-        for(int pos =1;!word.isEmpty();){
+        current = word;
+        if(remove)forRemove.append (word);
+        random.clear();
+        for(;!word.isEmpty();){
             int rand = (qrand()%30+1);
-            setButton (word.right (1), rand);
-            word.chop (1);
+            if(!random.contains (rand)){
+                setButton (word.right (1), rand);
+                word.chop (1);
+                random.append (rand);
+            }
         }
+        ui->pushButton_32->setFocus ();
+        setFocus();
+        anable();
         return;
 }
 
 void buttons::setButton (QString name, int pos){
-    switch(pos){
-    case 1:
-        ui->pushButton->setHidden (false);
-        ui->pushButton->setText (name);
-        break;
-    case 2:
-        ui->pushButton_2->setHidden (false);
-        ui->pushButton_2->setText (name);
-        break;
-    case 3:
-        ui->pushButton_3->setHidden (false);
-        ui->pushButton_3->setText (name);
-        break;
-    case 4:
-        ui->pushButton_4->setHidden (false);
-        ui->pushButton_4->setText (name);
-        break;
-    case 5:
-        ui->pushButton_5->setHidden (false);
-        ui->pushButton_5->setText (name);
-        break;
-    case 6:
-        ui->pushButton_6->setHidden (false);
-        ui->pushButton_6->setText (name);
-        break;
-    case 7:
-        ui->pushButton_7->setHidden (false);
-        ui->pushButton_7->setText (name);
-        break;
-    case 8:
-        ui->pushButton_8->setHidden (false);
-        ui->pushButton_8->setText (name);
-        break;
-    case 9:
-        ui->pushButton_9->setHidden (false);
-        ui->pushButton_9->setText (name);
-        break;
-    case 10:
-        ui->pushButton_10->setHidden (false);
-        ui->pushButton_10->setText (name);
-        break;
-    case 11:
-        ui->pushButton_11->setHidden (false);
-        ui->pushButton_11->setText (name);
-        break;
-    case 12:
-        ui->pushButton_12->setHidden (false);
-        ui->pushButton_12->setText (name);
-        break;
-    case 13:
-        ui->pushButton_13->setHidden (false);
-        ui->pushButton_13->setText (name);
-        break;
-    case 14:
-        ui->pushButton_14->setHidden (false);
-        ui->pushButton_14->setText (name);
-        break;
-    case 15:
-        ui->pushButton_15->setHidden (false);
-        ui->pushButton_15->setText (name);
-        break;
-    case 16:
-        ui->pushButton_16->setHidden (false);
-        ui->pushButton_16->setText (name);
-        break;
-    case 17:
-        ui->pushButton_17->setHidden (false);
-        ui->pushButton_17->setText (name);
-        break;
-    case 18:
-        ui->pushButton_18->setHidden (false);
-        ui->pushButton_18->setText (name);
-        break;
-    case 19:
-        ui->pushButton_19->setHidden (false);
-        ui->pushButton_19->setText (name);
-        break;
-    case 20:
-        ui->pushButton_20->setHidden (false);
-        ui->pushButton_20->setText (name);
-        break;
-    case 21:
-        ui->pushButton_21->setHidden (false);
-        ui->pushButton_21->setText (name);
-        break;
-    case 22:
-        ui->pushButton_22->setHidden (false);
-        ui->pushButton_22->setText (name);
-        break;
-    case 23:
-        ui->pushButton_23->setHidden (false);
-        ui->pushButton_23->setText (name);
-        break;
-    case 24:
-        ui->pushButton_24->setHidden (false);
-        ui->pushButton_24->setText (name);
-        break;
-    case 25:
-        ui->pushButton_25->setHidden (false);
-        ui->pushButton_25->setText (name);
-        break;
-    case 26:
-        ui->pushButton_26->setHidden (false);
-        ui->pushButton_26->setText (name);
-        break;
-    case 27:
-        ui->pushButton_27->setHidden (false);
-        ui->pushButton_27->setText (name);
-        break;
-    case 28:
-        ui->pushButton_28->setHidden (false);
-        ui->pushButton_28->setText (name);
-        break;
-    case 29:
-        ui->pushButton_29->setHidden (false);
-        ui->pushButton_29->setText (name);
-        break;
-    case 30:
-        ui->pushButton_30->setHidden (false);
-        ui->pushButton_30->setText (name);
-        break;
-    default:
-        qDebug()<< "Holly shit";
-    }
+    getButton (pos)->setHidden (false);
+    getButton (pos)->setText (name);
 }
 
 void buttons::disable(){
-    ui->pushButton->setHidden (true);
-    ui->pushButton_2->setHidden (true);
-    ui->pushButton_3->setHidden (true);
-    ui->pushButton_4->setHidden (true);
-    ui->pushButton_5->setHidden (true);
-    ui->pushButton_6->setHidden (true);
-    ui->pushButton_7->setHidden (true);
-    ui->pushButton_8->setHidden (true);
-    ui->pushButton_9->setHidden (true);
-    ui->pushButton_10->setHidden (true);
-    ui->pushButton_11->setHidden (true);
-    ui->pushButton_12->setHidden (true);
-    ui->pushButton_13->setHidden (true);
-    ui->pushButton_14->setHidden (true);
-    ui->pushButton_15->setHidden (true);
-    ui->pushButton_16->setHidden (true);
-    ui->pushButton_17->setHidden (true);
-    ui->pushButton_18->setHidden (true);
-    ui->pushButton_19->setHidden (true);
-    ui->pushButton_20->setHidden (true);
-    ui->pushButton_21->setHidden (true);
-    ui->pushButton_22->setHidden (true);
-    ui->pushButton_23->setHidden (true);
-    ui->pushButton_24->setHidden (true);
-    ui->pushButton_25->setHidden (true);
-    ui->pushButton_26->setHidden (true);
-    ui->pushButton_27->setHidden (true);
-    ui->pushButton_28->setHidden (true);
-    ui->pushButton_29->setHidden (true);
-    ui->pushButton_30->setHidden (true);
+    for(int n =1;n<=30;n++)getButton (n)->setHidden(true);
+}
+
+void buttons::anable(){
+    for(int n=1;n<=30;n++)getButton (n)->setDisabled (false);
+}
+
+
+void buttons::on_pushButton_clicked(){
+    installButton (ui->pushButton);
+}
+
+void buttons::on_pushButton_2_clicked()
+{
+    installButton(ui->pushButton_2);
+}
+
+void buttons::on_pushButton_3_clicked()
+{
+    installButton(ui->pushButton_3);
+
+}
+
+void buttons::on_pushButton_5_clicked()
+{
+    installButton(ui->pushButton_5);
+}
+
+void buttons::on_pushButton_6_clicked()
+{
+    installButton(ui->pushButton_6);
+
+}
+
+void buttons::on_pushButton_4_clicked()
+{
+    installButton(ui->pushButton_4);
+
+}
+
+void buttons::on_pushButton_8_clicked()
+{
+    installButton(ui->pushButton_8);
+
+}
+
+void buttons::on_pushButton_9_clicked()
+{
+    installButton(ui->pushButton_9);
+}
+
+void buttons::on_pushButton_7_clicked()
+{
+    installButton(ui->pushButton_7);
+}
+
+void buttons::on_pushButton_10_clicked()
+{
+    installButton(ui->pushButton_10);
+}
+
+void buttons::on_pushButton_17_clicked()
+{
+    installButton(ui->pushButton_17);
+}
+
+void buttons::on_pushButton_20_clicked()
+{
+    installButton(ui->pushButton_20);
+}
+
+void buttons::on_pushButton_14_clicked()
+{
+    installButton(ui->pushButton_14);
+}
+
+void buttons::on_pushButton_16_clicked()
+{
+    installButton(ui->pushButton_16);
+}
+
+void buttons::on_pushButton_13_clicked()
+{
+    installButton(ui->pushButton_13);
+}
+
+void buttons::on_pushButton_15_clicked()
+{
+    installButton(ui->pushButton_15);
+}
+
+void buttons::on_pushButton_19_clicked()
+{
+    installButton(ui->pushButton_19);
+}
+
+void buttons::on_pushButton_12_clicked()
+{
+    installButton(ui->pushButton_12);
+}
+
+void buttons::on_pushButton_11_clicked()
+{
+    installButton(ui->pushButton_11);
+}
+
+void buttons::on_pushButton_18_clicked()
+{
+    installButton(ui->pushButton_18);
+}
+
+void buttons::on_pushButton_27_clicked()
+{
+    installButton(ui->pushButton_27);
+}
+
+void buttons::on_pushButton_30_clicked()
+{
+    installButton(ui->pushButton_30);
+}
+
+void buttons::on_pushButton_24_clicked()
+{
+    installButton(ui->pushButton_24);
+}
+
+void buttons::on_pushButton_26_clicked()
+{
+    installButton(ui->pushButton_26);
+}
+
+void buttons::on_pushButton_23_clicked()
+{
+    installButton(ui->pushButton_23);
+}
+
+void buttons::on_pushButton_25_clicked()
+{
+    installButton(ui->pushButton_25);
+}
+
+void buttons::on_pushButton_29_clicked()
+{
+    installButton(ui->pushButton_29);
+}
+
+void buttons::on_pushButton_22_clicked()
+{
+    installButton(ui->pushButton_22);
+}
+
+void buttons::on_pushButton_21_clicked()
+{
+    installButton(ui->pushButton_21);
+}
+
+void buttons::on_pushButton_28_clicked()
+{
+    installButton(ui->pushButton_28);
+}
+
+bool buttons::check (QString name){
+    QString text = ui->label_2->text()+name;
+    int size = text.size();
+    QString proof = current.left (size);
+    if(current==text){
+        ui->label_2->setDisabled (true);
+        ui->pushButton_32->setText ("Next");
+        return false;
+    }
+    ////
+    if(proof==text){
+        return false;
+    }else{
+        return true;
+    }
+}
+
+
+void buttons::installButton (QPushButton *button){
+    QString text = ui->label_2->text ();
+    if(check (button->text ())){
+        button->setDisabled (true);
+        return;
+    }
+    anable();
+    text.append (button->text ());
+    ui->label_2->setText (text);
+    button->setHidden(true);
+
+}
+
+QPushButton *buttons::getButton(int n, bool skip){
+    switch(n){
+    case 1:
+        if (!skip)return ui->pushButton;
+        on_pushButton_clicked();
+ return 0;
+    case 2:
+        if(!skip)return ui->pushButton_2;
+        on_pushButton_2_clicked();
+ return 0;
+    case 3:
+        if(!skip)return ui->pushButton_3;
+        on_pushButton_3_clicked();
+ return 0;
+    case 4:
+        if(!skip)return ui->pushButton_4;
+        on_pushButton_4_clicked();
+ return 0;
+    case 5:
+        if(!skip)return ui->pushButton_5;
+        on_pushButton_5_clicked();
+ return 0;
+    case 6:
+        if(!skip)return ui->pushButton_6;
+        on_pushButton_6_clicked();
+ return 0;
+    case 7:
+        if(!skip)return ui->pushButton_7;
+        on_pushButton_7_clicked();
+ return 0;
+    case 8:
+        if(!skip)return ui->pushButton_8;
+        on_pushButton_8_clicked();
+ return 0;
+    case 9:
+        if(!skip)return ui->pushButton_9;
+        on_pushButton_9_clicked();
+ return 0;
+    case 10:
+        if(!skip)return ui->pushButton_10;
+        on_pushButton_10_clicked();
+ return 0;
+    case 11:
+        if(!skip)return ui->pushButton_11;
+        on_pushButton_11_clicked();
+ return 0;
+    case 12:
+        if(!skip)return ui->pushButton_12;
+        on_pushButton_12_clicked();
+ return 0;
+    case 13:
+        if(!skip)return ui->pushButton_13;
+        on_pushButton_13_clicked();
+ return 0;
+    case 14:
+        if(!skip)return ui->pushButton_14;
+        on_pushButton_14_clicked();
+ return 0;
+    case 15:
+        if(!skip)return ui->pushButton_15;
+        on_pushButton_15_clicked();
+ return 0;
+    case 16:
+        if(!skip)return ui->pushButton_16;
+        on_pushButton_16_clicked();
+ return 0;
+    case 17:
+        if(!skip)return ui->pushButton_17;
+        on_pushButton_17_clicked();
+ return 0;
+    case 18:
+        if(!skip)return ui->pushButton_18;
+        on_pushButton_18_clicked();
+ return 0;
+    case 19:
+        if(!skip)return ui->pushButton_19;
+        on_pushButton_19_clicked();
+ return 0;
+    case 20:
+        if(!skip)return ui->pushButton_20;
+        on_pushButton_20_clicked();
+ return 0;
+    case 21:
+        if(!skip)return ui->pushButton_21;
+        on_pushButton_21_clicked();
+ return 0;
+    case 22:
+        if(!skip)return ui->pushButton_22;
+        on_pushButton_22_clicked();
+ return 0;
+    case 23:
+        if(!skip)return ui->pushButton_23;
+        on_pushButton_23_clicked();
+ return 0;
+    case 24:
+        if(!skip)return ui->pushButton_24;
+        on_pushButton_24_clicked();
+ return 0;
+    case 25:
+        if(!skip)return ui->pushButton_25;
+        on_pushButton_25_clicked();
+ return 0;
+    case 26:
+        if(!skip)return ui->pushButton_26;
+        on_pushButton_26_clicked();
+ return 0;
+    case 27:
+        if(!skip)return ui->pushButton_27;
+        on_pushButton_27_clicked();
+ return 0;
+    case 28:
+        if(!skip)return ui->pushButton_28;
+        on_pushButton_28_clicked();
+ return 0;
+    case 29:
+        if(!skip)return ui->pushButton_29;
+        on_pushButton_29_clicked();
+ return 0;
+    case 30:
+        if(!skip)return ui->pushButton_30;
+        on_pushButton_30_clicked();
+ return 0;
+    default:
+        qFatal("You should use numbers in rage of 30!");
+    }
+}
+
+void buttons::keyPressEvent (QKeyEvent *e){
+    for(int n=0;n<random.size ();n++){
+        QPushButton *button=getButton (random[n]);
+        if(((QString)e->key ())==(button->text ().toUpper ())){
+            getButton (random[n], true);
+            if(button->isEnabled ())random.removeAt (n);
+            else continue;
+            break;
+        }
+    }
+    if(e->key () == Qt::Key_Return)on_pushButton_32_clicked ();
 }
