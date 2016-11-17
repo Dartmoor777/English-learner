@@ -1,6 +1,6 @@
-#include "cardbrows.h"
+#include "lib/cardbrows.h"
 #include "ui_cardbrows.h"
-#include "edit.h"
+#include "lib/edit.h"
 
 
 cardBrows::cardBrows(QWidget *parent, QMap<QString, QString> *words) :

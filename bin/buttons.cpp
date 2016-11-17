@@ -1,6 +1,6 @@
-#include "buttons.h"
+#include "lib/buttons.h"
 #include "ui_buttons.h"
-#include "study.h"
+#include "lib/study.h"
 
 buttons::buttons(QWidget *parent, QMainWindow *win, QMap<QString, QString> *words, QList<int> list) :
     QWidget(parent),

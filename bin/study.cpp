@@ -1,7 +1,7 @@
-#include "study.h"
+#include "lib/study.h"
 #include "ui_study.h"
-#include "learn.h"
-#include "buttons.h"
+#include "lib/learn.h"
+#include "lib/buttons.h"
 
 study::study(QWidget *parent, QMainWindow *win,QMap<QString, QString> *words) :
     QWidget(parent),

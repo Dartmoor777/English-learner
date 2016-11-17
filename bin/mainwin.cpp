@@ -1,6 +1,6 @@
-#include "mainwin.h"
+#include "lib/mainwin.h"
 #include "ui_mainwin.h"
-#include "repeat.h"
+#include "lib/repeat.h"
 
 mainwin::mainwin(QWidget *parent, QMainWindow *win, QMap<QString, QString> *words) :
     QWidget(parent),

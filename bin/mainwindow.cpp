@@ -1,7 +1,7 @@
-#include "mainwindow.h"
+#include "lib/mainwindow.h"
 #include "ui_mainwindow.h"
 #include "QDebug"
-#include "cardbrows.h"
+#include "lib/cardbrows.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
