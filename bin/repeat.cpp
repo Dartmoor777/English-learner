@@ -1,6 +1,6 @@
-#include "repeat.h"
+#include "lib/repeat.h"
 #include "ui_repeat.h"
-#include "mainwin.h"
+#include "lib/mainwin.h"
 
 repeat::repeat(QWidget *parent, QMainWindow *win, QMap<QString, QString> *words) :
     QWidget(parent),

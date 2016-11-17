@@ -1,6 +1,6 @@
-#include "learn.h"
+#include "lib/learn.h"
 #include "ui_learn.h"
-#include "buttons.h"
+#include "lib/buttons.h"
 
 learn::learn(QWidget *parent, QMainWindow *win, int but, QMap<QString, QString> *words) :
     QWidget(parent),

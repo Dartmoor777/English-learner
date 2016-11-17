@@ -1,4 +1,4 @@
-#include "edit.h"
+#include "lib/edit.h"
 #include "ui_edit.h"
 
 edit::edit(QWidget *parent, QTableWidget *table, int row, QMap<QString, QString> *anki) :

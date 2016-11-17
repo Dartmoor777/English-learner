@@ -1,4 +1,4 @@
-#include "add.h"
+#include "lib/add.h"
 #include "ui_add.h"
 
 add::add(QWidget *parent, QMap<QString, QString> *words) :
