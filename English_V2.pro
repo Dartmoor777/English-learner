@@ -9,33 +9,38 @@ TARGET = English_V2
 
 TEMPLATE = app
 
-SOURCES += main.cpp\
-								mainwin.cpp\
-								add.cpp\
-								study.cpp \
-    mainwindow.cpp \
-    learn.cpp \
-    buttons.cpp \
-    repeat.cpp
+SOURCES += bin/main.cpp\
+            bin/mainwin.cpp\
+            bin/add.cpp\
+            bin/study.cpp \
+            bin/mainwindow.cpp \
+            bin/learn.cpp \
+        bin/buttons.cpp \
+        bin/repeat.cpp \
+        bin/cardbrows.cpp \
+        bin/edit.cpp
 
-HEADERS  += mainwindow.h\
-								mainwindow.h\
-								mainwin.h\
-								add.h\
-								study.h \
-    learn.h \
-    buttons.h \
-    repeat.h
+HEADERS  += lib/mainwindow.h\
+        lib/mainwindow.h\
+        lib/mainwin.h\
+        lib/add.h\
+        lib/study.h \
+    lib/learn.h \
+    lib/buttons.h \
+    lib/repeat.h \
+    lib/cardbrows.h \
+    lib/edit.h
 
-FORMS    += mainwindow.ui\
-								mainwindow.ui\
-								mainwin.ui\
-								add.ui\
-								study.ui \
-    learn.ui \
-    buttons.ui \
-    repeat.ui
+FORMS    += fomrs/mainwindow.ui\
+        forms/mainwindow.ui\
+        forms/mainwin.ui\
+        forms/add.ui\
+        forms/study.ui \
+    forms/learn.ui \
+    forms/buttons.ui \
+    forms/repeat.ui \
+    forms/cardbrows.ui \
+    forms/edit.ui
 
 RESOURCES += \
     Sourse/sourse.qrc
-

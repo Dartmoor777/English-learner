@@ -1,6 +1,8 @@
 <RCC>
     <qresource prefix="/new/img">
         <file>English_language.png</file>
-        <file>United-Kingdom-flag-icon.png</file>
+        <file alias="icon">United-Kingdom-flag-icon.png</file>
+        <file alias="check">check.png</file>
+        <file alias="cross">cross.png</file>
     </qresource>
 </RCC>

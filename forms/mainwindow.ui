@@ -16,9 +16,9 @@
      <colorrole role="WindowText">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>231</red>
-        <green>231</green>
-        <blue>231</blue>
+        <red>235</red>
+        <green>235</green>
+        <blue>235</blue>
        </color>
       </brush>
      </colorrole>
@@ -61,27 +61,72 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>51</red>
-        <green>51</green>
-        <blue>51</blue>
+        <red>54</red>
+        <green>54</green>
+        <blue>54</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>49</red>
-        <green>49</green>
-        <blue>49</blue>
+        <red>45</red>
+        <green>45</green>
+        <blue>45</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>116</red>
+        <green>114</green>
+        <blue>112</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="70">
+        <red>253</red>
+        <green>253</green>
+        <blue>253</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>79</red>
+        <green>79</green>
+        <blue>79</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="NoRole">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
+        <red>221</red>
+        <green>221</green>
+        <blue>221</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="70">
+        <red>254</red>
+        <green>254</green>
+        <blue>254</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>229</red>
+        <green>229</green>
+        <blue>229</blue>
        </color>
       </brush>
      </colorrole>
@@ -90,9 +135,9 @@
      <colorrole role="WindowText">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>231</red>
-        <green>231</green>
-        <blue>231</blue>
+        <red>235</red>
+        <green>235</green>
+        <blue>235</blue>
        </color>
       </brush>
      </colorrole>
@@ -135,27 +180,72 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>51</red>
-        <green>51</green>
-        <blue>51</blue>
+        <red>54</red>
+        <green>54</green>
+        <blue>54</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>49</red>
-        <green>49</green>
-        <blue>49</blue>
+        <red>45</red>
+        <green>45</green>
+        <blue>45</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>116</red>
+        <green>114</green>
+        <blue>112</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="70">
+        <red>253</red>
+        <green>253</green>
+        <blue>253</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>79</red>
+        <green>79</green>
+        <blue>79</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="NoRole">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
+        <red>221</red>
+        <green>221</green>
+        <blue>221</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="70">
+        <red>254</red>
+        <green>254</green>
+        <blue>254</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>229</red>
+        <green>229</green>
+        <blue>229</blue>
        </color>
       </brush>
      </colorrole>
@@ -209,27 +299,72 @@
      <colorrole role="Base">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>49</red>
-        <green>49</green>
-        <blue>49</blue>
+        <red>45</red>
+        <green>45</green>
+        <blue>45</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="Window">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>49</red>
-        <green>49</green>
-        <blue>49</blue>
+        <red>45</red>
+        <green>45</green>
+        <blue>45</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Shadow">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>116</red>
+        <green>114</green>
+        <blue>112</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="Highlight">
+      <brush brushstyle="SolidPattern">
+       <color alpha="70">
+        <red>255</red>
+        <green>255</green>
+        <blue>255</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="AlternateBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>79</red>
+        <green>79</green>
+        <blue>79</blue>
        </color>
       </brush>
      </colorrole>
      <colorrole role="NoRole">
       <brush brushstyle="SolidPattern">
        <color alpha="255">
-        <red>226</red>
-        <green>226</green>
-        <blue>226</blue>
+        <red>221</red>
+        <green>221</green>
+        <blue>221</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipBase">
+      <brush brushstyle="SolidPattern">
+       <color alpha="70">
+        <red>254</red>
+        <green>254</green>
+        <blue>254</blue>
+       </color>
+      </brush>
+     </colorrole>
+     <colorrole role="ToolTipText">
+      <brush brushstyle="SolidPattern">
+       <color alpha="255">
+        <red>229</red>
+        <green>229</green>
+        <blue>229</blue>
        </color>
       </brush>
      </colorrole>
@@ -240,8 +375,8 @@
    <string>English Learner</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Sourse/sourse.qrc">
-    <normaloff>:/new/img/United-Kingdom-flag-icon.png</normaloff>:/new/img/United-Kingdom-flag-icon.png</iconset>
+   <iconset>
+    <normaloff>:/new/img/icon</normaloff>:/new/img/icon</iconset>
   </property>
   <widget class="QWidget" name="centralWidget"/>
   <widget class="QMenuBar" name="menuBar">
@@ -257,6 +392,7 @@
     <property name="title">
      <string>&amp;Main</string>
     </property>
+    <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menu_Settings">
     <property name="title">
@@ -268,6 +404,8 @@
     <property name="title">
      <string>&amp;About</string>
     </property>
+    <addaction name="action_Help"/>
+    <addaction name="action_Program"/>
    </widget>
    <addaction name="menuMain"/>
    <addaction name="menu_Settings"/>
@@ -283,10 +421,40 @@
     <string>Browse cards</string>
    </property>
   </action>
+  <action name="action_Exit">
+   <property name="text">
+    <string>&amp;Exit</string>
+   </property>
+  </action>
+  <action name="action_Help">
+   <property name="text">
+    <string>&amp;Help</string>
+   </property>
+  </action>
+  <action name="action_Program">
+   <property name="text">
+    <string>&amp;Program</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="Sourse/sourse.qrc"/>
- </resources>
- <connections/>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>action_Exit</sender>
+   <signal>triggered()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>391</x>
+     <y>253</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
