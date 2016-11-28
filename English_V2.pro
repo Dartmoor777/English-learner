@@ -9,6 +9,7 @@ TARGET = English_V2
 
 TEMPLATE = app
 
+<<<<<<< HEAD
 
 RESOURCES += \
     Sourse/sourse.qrc
@@ -36,6 +37,68 @@ FORMS += \
     forms/repeat.ui \
     forms/study.ui
 
+=======
+#SOURCES +=
+#bin/main.cpp\
+#            bin/mainwin.cpp\
+#            bin/add.cpp\
+#            bin/study.cpp \
+#            bin/mainwindow.cpp \
+#            bin/learn.cpp \
+#        bin/buttons.cpp \
+#        bin/repeat.cpp \
+#        bin/cardbrows.cpp \
+#        bin/edit.cpp
+
+#HEADERS  += lib/mainwindow.h\
+#        lib/mainwindow.h\
+#        lib/mainwin.h\
+#        lib/add.h\
+#        lib/study.h \
+#    lib/learn.h \
+#    lib/buttons.h \
+#    lib/repeat.h \
+#    lib/cardbrows.h \
+#    lib/edit.h
+
+#FORMS    += fomrs/mainwindow.ui\
+#        forms/mainwindow.ui\
+#        forms/mainwin.ui\
+#        forms/add.ui\
+##        forms/study.ui \
+#    forms/learn.ui \
+#    forms/buttons.ui \
+#    forms/repeat.ui \
+#    forms/cardbrows.ui \
+#    forms/edit.ui
+
+RESOURCES += \
+    Sourse/sourse.qrc
+
+SOURCES += \
+    bin/add.cpp \
+    bin/buttons.cpp \
+    bin/cardbrows.cpp \
+    bin/edit.cpp \
+    bin/learn.cpp \
+    bin/main.cpp \
+    bin/mainwin.cpp \
+    bin/mainwindow.cpp \
+    bin/repeat.cpp \
+    bin/study.cpp
+
+FORMS += \
+    forms/add.ui \
+    forms/buttons.ui \
+    forms/cardbrows.ui \
+    forms/edit.ui \
+    forms/learn.ui \
+    forms/mainwin.ui \
+    forms/mainwindow.ui \
+    forms/repeat.ui \
+    forms/study.ui
+
+>>>>>>> 9f622a9d762fe0536aaa455e138b7665238f41b4
 HEADERS += \
     lib/add.h \
     lib/buttons.h \
