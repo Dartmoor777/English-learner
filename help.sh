@@ -41,11 +41,10 @@ function zyxel {
                     echo 'ad -i IP -m MAC'
                     echo 'write the changes into billing'
                 ;;
-                'vlan')
-                    echo 'vlan (number)'
-                    echo 'Save it! -- write | write mem'
+                'vlan') echo 'dunno'
                     ;;
                 'port')
+                    	echo 'vlan (number)'
                         echo 'Tagging a port into vlan:'
                         echo 'fixed (port)'
                         echo 'exit'
@@ -69,6 +68,18 @@ function zyxel {
                         echo 'Save it! -- write | write mem'
                     ;;
                 'error') echo 'dunno';;
+		'abon') 
+			echo '1.Open the abon in billing and terminal'
+			echo '2.Delete macs'	
+                    	echo 'conf'
+                    	echo 'no mac-forward mac (xx:xx:xx:xx:) vlan (number) int (port)'
+			echo '3.Delete the port from vlan'
+			echo 'vlan (vlan)'
+                        echo 'forbidden (number_port)'
+                    	echo '4.then delete it from database!'
+			echo '5.And billing!(lines, equipment, macs, ip)'
+			echo '6.Write the changes into the journal!'
+		;;
         esac;;
         'reboot') echo 'shutdown'
                     echo 'no shutdown';;
@@ -145,6 +156,21 @@ function zyxel35 {
                     echo 'Save it! -- write | write mem'
                     ;;
                 'error') echo 'dunno';;
+		'abon') 
+			echo '1.Open the abon in billing and terminal'
+			echo '2.Delete macs'	
+                    	echo '(check the number of rules in config)'
+                    	echo 'show running-config'
+                    	echo 'no policy ppx_y'
+                    	echo 'no classifier portx_y'
+			echo '3.Delete the port from vlan'
+			echo 'config'
+			echo 'vlan (nvlan)'
+                        echo 'forbidden (number_port)'
+                    	echo '4.then delete it from database!'
+			echo '5.And billing!(lines, equipment, macs, ip)'
+			echo '6.Write the changes into the journal!'
+		;;
         esac;;
         'reboot')
             echo 'config'
@@ -197,11 +223,21 @@ function fox60 {
                     echo '3.Delete from the database and billing!'
                     echo 'delip -i IP -m MAC'
                 ;;
-                'vlan') echo 'Check: fox60 delete port';;
+                'vlan') echo 'dunno';;
                 'port') echo 'clear vlan (Nvlan) (port)'
                         echo 'Write it in the billing!'
                     ;;
                 'error') echo 'clear port counter (port?)';; #maybe wrong
+		'abon') 
+			echo '1.Open the abon in billing and terminal'
+			echo '2.Delete macs'	
+                    	echo 'clear security static-mac (xxxx.xxxx.xxxx.xxxx)'
+			echo '3.Delete the port from vlan'
+			echo 'clear vlan (Nvlan) (port)'
+                    	echo '4.then delete it from database!'
+			echo '5.And billing!(lines, equipment, macs, ip)'
+			echo '6.Write the changes into the journal!'
+		;;
         esac;;
         'reboot')
             echo '_set port disable (port)'
@@ -284,19 +320,29 @@ function fox62 {
                     echo 'Save it!! -- write | write mem'
                     echo 'Delete the mac from the database and billing!!'
                 ;;
-                'vlan')
+                'port')
                     echo '1.conf'
                     echo '2.interface ethernet 0/0/(port)'
-                    echo 'Option 1:'
                     echo 'no switchport access vlan (number_vlan)'
-                    echo 'Option 2:'
-                    echo 'no switchport port-security -- deleting all configs on the port'
+                    #echo 'no switchport port-security -- deleting all configs on the port'
                     echo '(after this you have to add all the configs!)'
                     echo 'Save it!! -- write | write mem'
                     echo 'Write the information about it into billing!!'
                     ;;
-                'port') echo 'check: fox62 delete vlan';;
+                'vlan') echo 'dunno';;
                 'error') echo 'dunno';;
+		'abon') 
+			echo '1.Open the abon in billing and terminal'
+			echo '2.Delete macs'	
+			echo 'conf'
+                    	echo 'interface ethernet 0/0/(port)'
+                    	echo 'no switchport port-security -- deleting all configs on the port'
+			echo '3.Delete the port from vlan'
+                    	echo 'no switchport access vlan (number_vlan)'
+                    	echo '4.then delete it from database!'
+			echo '5.And billing!(lines, equipment, macs, ip)'
+			echo '6.Write the changes into the journal!'
+		;;
         esac;;
         'reboot')
             echo '1.conf'
@@ -364,6 +410,19 @@ function linksys {
                     echo '5.Add information into billing!'
                     ;;
                 'error') echo 'dunno';;
+		'abon') 
+			echo '1.Open the abon in billing and terminal'
+			echo '2.Delete macs'	
+                    	echo 'config'
+                    	echo 'interface vlan (number_vlan)'
+                    	echo 'no bridge address (old_mac_address) '
+			echo '3.Delete the port from vlan'
+                    	echo 'int eth e(port)'
+                    	echo 'no switchport access vlan (number_vlan)'
+                    	echo '4.then delete it from database!'
+			echo '5.And billing!(lines, equipment, macs, ip)'
+			echo '6.Write the changes into the journal!'
+		;;
         esac;;
         'reboot')
             echo '~~~maybe~~~'  #maybe wrong
@@ -438,6 +497,21 @@ function dlink {
 			echo 'config vlan <vlanid> delete <port>'
 			;;
                 'error') echo 'clear counters ports (port)';;
+		'abon') 
+			echo '1.Open the abon in billing and terminal'
+			echo '2.Delete macs'	
+			echo 'Check rules'
+			echo 'config access_profile profile_id 3 delete access_id (num of rule)'
+			echo 'or the next:'
+			echo 'delete fdb (name vlan) mac'
+			echo '3.Delete the port from vlan'
+			echo 'config vlan vlanid (N_Vlan) delete (Nport)'
+			echo 'on DES-3526:'
+			echo 'config vlan <vlanid> delete <port>'
+                    	echo '4.then delete it from database!'
+			echo '5.And billing!(lines, equipment, macs, ip)'
+			echo '6.Write the changes into the journal!'
+		;;
         esac;;
         'reboot') 
 		echo 'config ports (nport) state enable/disable';;
