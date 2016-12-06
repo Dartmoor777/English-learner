@@ -17,17 +17,23 @@ function zyxel {
                 'mac') case $3 in
                         'blocked') echo '';;
                         'income')
-                                echo 'Firstly: check learning on the port'
+                                echo '1.Check learning on the port'
                                 echo 'show port-security'
-                                echo 'if it open, shutdown it:'
-                                echo 'port-security (port) learn inactive'
+                                echo '2.Then, switch mac-learning on:'
+                                echo 'no port-security (port) learn inactive'
                                 echo 'then check it:'
                                 echo 'show mac address-table port (all) (port)'
-                                echo 'after you have to revert the state:'
-                                echo 'no port-security (port) learn inactive'
+                                echo '3.After you have to revert the state:'
+				                echo 'port-security (port) learn inactive'
                                 ;;
                         'bound') echo 'show mac address-table static';;
+                *) echo "Incorrect keyword: $3"
+                    echo "Possible endings: blocked, income, bound"
+                    ;;
                     esac;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: config, log, vlan, cable, ports, errors, mac"
+                    ;;
             esac ;;
         'add') case $2 in
                 'mac')
@@ -52,6 +58,9 @@ function zyxel {
                         echo 'pvid (number_vlan)'
                         echo 'Save it! -- write | write mem'
                     ;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port"
+                    ;;
         esac;;
         'delete') case $2 in
                 'mac')
@@ -68,9 +77,9 @@ function zyxel {
                         echo 'Save it! -- write | write mem'
                     ;;
                 'error') echo 'dunno';;
-		'abon') 
+		'abon')
 			echo '1.Open the abon in billing and terminal'
-			echo '2.Delete macs'	
+			echo '2.Delete macs'
                     	echo 'conf'
                     	echo 'no mac-forward mac (xx:xx:xx:xx:) vlan (number) int (port)'
 			echo '3.Delete the port from vlan'
@@ -80,10 +89,15 @@ function zyxel {
 			echo '5.And billing!(lines, equipment, macs, ip)'
 			echo '6.Write the changes into the journal!'
 		;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port, error, abon"
+                    ;;
         esac;;
-        'reboot') echo 'shutdown'
-                    echo 'no shutdown';;
-        *)echo 'something went wrong..';;
+        'reboot')
+            echo 'interface ethernet <port>'
+            echo 'shutdown'
+            echo 'no shutdown';;
+        *)echo "Incorrect keyword $1" ; echo 'Possible endings: show, add, delete, reboot';;
     esac
 }
 function zyxel35 {
@@ -109,7 +123,13 @@ function zyxel35 {
                                 echo 'port-security'
                             ;;
                         'bound') echo 'show classifier';;
+                *) echo "Incorrect keyword: $3"
+                    echo "Possible endings: blocked, income, bound"
+                    ;;
                     esac;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: config, log, vlan, cable, ports, errors, mac"
+                    ;;
             esac ;;
         'add') case $2 in
                 'mac')
@@ -129,6 +149,9 @@ function zyxel35 {
                     echo 'adding the port into vlan:'
                     echo 'Example: receiver-port 1-26,28'
                     echo 'Save it! -- write | write mem'
+                    ;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port"
                     ;;
         esac;;
         'delete') case $2 in
@@ -156,9 +179,9 @@ function zyxel35 {
                     echo 'Save it! -- write | write mem'
                     ;;
                 'error') echo 'dunno';;
-		'abon') 
+		'abon')
 			echo '1.Open the abon in billing and terminal'
-			echo '2.Delete macs'	
+			echo '2.Delete macs'
                     	echo '(check the number of rules in config)'
                     	echo 'show running-config'
                     	echo 'no policy ppx_y'
@@ -171,6 +194,9 @@ function zyxel35 {
 			echo '5.And billing!(lines, equipment, macs, ip)'
 			echo '6.Write the changes into the journal!'
 		;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port, error, abon"
+                    ;;
         esac;;
         'reboot')
             echo 'config'
@@ -178,7 +204,7 @@ function zyxel35 {
             echo 'inactive'
             echo 'no inactive'
             ;;
-        *) echo 'something went wrong..';;
+        *) echo "Incorrect keyword $1" ; echo 'Possible endings: show, add, delete, reboot';;
     esac
 }
 function fox60 {
@@ -193,15 +219,21 @@ function fox60 {
                 'mac') case $3 in
                         'blocked')echo 'dunno';;
                         'income')
-                            echo '1.Shutdown a mac-learning'
-                            echo '_set security mac-learning (port) disable'
+                            echo '1.Switching on mac-learning'
+                            echo '_set security mac-learning (port) enable'
                             echo '2.Check an income mac'
                             echo 'show port mac-learning (port)'
-                            echo 'Enabling of mac'
-                            echo '_set security mac-learning (port) enable'
+                            echo '1.Switching off mac-learning'
+                            echo '_set security mac-learning (port) disable'
                             ;;
                         'bound') echo 'show security static-mac';;
+                *) echo "Incorrect keyword: $3"
+                    echo "Possible endings: blocked, income, bound"
+                    ;;
                     esac;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: config, log, vlan, cable, ports, errors, mac"
+                    ;;
             esac ;;
         'add') case $2 in
                 'mac')
@@ -214,6 +246,9 @@ function fox60 {
                 'port')
                     echo '_set vlan (number_vlan) (port)'
                     echo 'Save it ! -- copy config flash'
+                    ;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port"
                     ;;
         esac;;
         'delete') case $2 in
@@ -228,9 +263,9 @@ function fox60 {
                         echo 'Write it in the billing!'
                     ;;
                 'error') echo 'clear port counter (port?)';; #maybe wrong
-		'abon') 
+		'abon')
 			echo '1.Open the abon in billing and terminal'
-			echo '2.Delete macs'	
+			echo '2.Delete macs'
                     	echo 'clear security static-mac (xxxx.xxxx.xxxx.xxxx)'
 			echo '3.Delete the port from vlan'
 			echo 'clear vlan (Nvlan) (port)'
@@ -238,12 +273,15 @@ function fox60 {
 			echo '5.And billing!(lines, equipment, macs, ip)'
 			echo '6.Write the changes into the journal!'
 		;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port, error, abon"
+                    ;;
         esac;;
         'reboot')
             echo '_set port disable (port)'
             echo '_set port enable (port)'
             ;;
-        *) echo 'something went wrong..';;
+        *) echo "Incorrect keyword $1" ; echo 'Possible endings: show, add, delete, reboot';;
     esac
 }
 function fox62 {
@@ -278,7 +316,12 @@ function fox62 {
                             echo '2.Ater, you should add the previous config on the port!'
                             ;;
                         'bound') echo 'show mac-address-table static';;
+                *) echo "Incorrect keyword: $3"
+                    echo "Possible endings: blocked, income, bound"
+                    ;;
                     esac;;
+                *)echo "Incorrect keyword: $2"; echo "Possible endings: config, log, vlan, cable, ports, errors, mac"
+                    ;;
             esac ;;
         'add') case $2 in
                 'mac')
@@ -307,6 +350,10 @@ function fox62 {
                     4.switchport trunk allowed vlan add (...)'
                     echo 'Save it!! -- write | write mem'
                     echo 'Write it in the journal!'
+                    ;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port, trunk"
+                    ;;
         esac;;
         'delete') case $2 in
                 'mac')
@@ -331,9 +378,9 @@ function fox62 {
                     ;;
                 'vlan') echo 'dunno';;
                 'error') echo 'dunno';;
-		'abon') 
+		'abon')
 			echo '1.Open the abon in billing and terminal'
-			echo '2.Delete macs'	
+			echo '2.Delete macs'
 			echo 'conf'
                     	echo 'interface ethernet 0/0/(port)'
                     	echo 'no switchport port-security -- deleting all configs on the port'
@@ -343,6 +390,9 @@ function fox62 {
 			echo '5.And billing!(lines, equipment, macs, ip)'
 			echo '6.Write the changes into the journal!'
 		;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port, error, abon"
+                    ;;
         esac;;
         'reboot')
             echo '1.conf'
@@ -350,7 +400,7 @@ function fox62 {
             echo '3.shutdown'
             echo '4.no shutdown'
             ;;
-        *) echo 'something went wrong..';;
+        *) echo "Incorrect keyword $1" ; echo 'Possible endings: show, add, delete, reboot';;
     esac
 }
 function linksys {
@@ -372,7 +422,13 @@ function linksys {
                             echo '5.port security'
                             ;;
                         'bound') echo 'show mac address-table static';;
+                *) echo "Incorrect keyword: $3"
+                    echo "Possible endings: blocked, income, bound"
+                    ;;
                     esac;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: config, log, vlan, cable, ports, errors, mac"
+                    ;;
             esac ;;
         'add') case $2 in
                 'mac')
@@ -390,6 +446,9 @@ function linksys {
                     echo '3.switchport access vlan (number_vlan)'
                     echo '4.Save it!! -- write'
                     echo '5.Add information into billing!'
+                    ;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port"
                     ;;
         esac;;
         'delete') case $2 in
@@ -410,9 +469,9 @@ function linksys {
                     echo '5.Add information into billing!'
                     ;;
                 'error') echo 'dunno';;
-		'abon') 
+		'abon')
 			echo '1.Open the abon in billing and terminal'
-			echo '2.Delete macs'	
+			echo '2.Delete macs'
                     	echo 'config'
                     	echo 'interface vlan (number_vlan)'
                     	echo 'no bridge address (old_mac_address) '
@@ -423,6 +482,9 @@ function linksys {
 			echo '5.And billing!(lines, equipment, macs, ip)'
 			echo '6.Write the changes into the journal!'
 		;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port, error, abon"
+                    ;;
         esac;;
         'reboot')
             echo '~~~maybe~~~'  #maybe wrong
@@ -432,7 +494,7 @@ function linksys {
             echo 'no shutdown'
 	    echo '(or inactive, etc.)'
             ;;
-	    *) echo 'something went wrong..';;
+	    *) echo "Incorrect keyword $1" ; echo 'Possible endings: show, add, delete, reboot';;
     esac
 }
 function dlink {
@@ -440,9 +502,11 @@ function dlink {
     case $1 in
         'show') case $2 in
                 'config') echo 'show access_profile profile_id 3';;
+                'log') echo 'show log';;
+                'vlan') echo 'dunno';;
                 'cable') echo 'cable_diag ports (nport)';;
                 'ports') echo 'show ports';;
-                'errors') 
+                'errors')
 			echo 'show error ports (port)'
 			echo 'If mac on aplink port:'
 			echo '1.show fdb mac_address (MAC) '
@@ -452,20 +516,26 @@ function dlink {
 			;;
                 'mac') case $3 in
                         'blocked') echo 'show address_binding blocked all';;
-                        'income') 
+                        'income')
 				echo '1.config ports (nport) learning enable/disable'
 				echo '2.show fdb port (nport)'
 			;;
                         'bound')
-				echo 'firmware1:' 
-				echo 'show access_profile profile_id 3'				
+				echo 'firmware1:'
+				echo 'show access_profile profile_id 3'
 				echo 'firmware2:'
 				echo 'show fdb static'
 				;;
+                *) echo "Incorrect keyword: $3"
+                    echo "Possible endings: blocked, income, bound"
+                    ;;
                     esac;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: config, log, vlan, cable, ports, errors, mac"
+                    ;;
             esac ;;
         'add') case $2 in
-                'mac') 
+                'mac')
 			echo 'Firmware1:'
 			echo '1.Check in the database!!'
 			echo '2.Check rules'
@@ -479,11 +549,14 @@ function dlink {
 			echo '4.save it!! -- save'
 			echo '5.Add the MAC into the database and billing!'
 			;;
-                'vlan') echo 'config vlan vlanid (N_Vlan) add untagged (Nport)';;
-                'port') echo 'check: dlink add vlan';;
+                'port') echo 'config vlan vlanid (N_Vlan) add untagged (Nport)';;
+                'vlan') echo 'dunno';;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port"
+                    ;;
         esac;;
         'delete') case $2 in
-                'mac') 
+                'mac')
 			echo '1.Check rules'
 			echo '2.config access_profile profile_id 3 delete access_id (num of rule)'
 			echo 'or the next:'
@@ -491,15 +564,15 @@ function dlink {
 			echo '3.Delete the MAC into the database and billing!'
 			;;
                 'vlan') echo 'check: dlink delete port';;
-                'port') 
+                'port')
 			echo 'config vlan vlanid (N_Vlan) delete (Nport)'
 			echo 'on DES-3526:'
 			echo 'config vlan <vlanid> delete <port>'
 			;;
                 'error') echo 'clear counters ports (port)';;
-		'abon') 
+		'abon')
 			echo '1.Open the abon in billing and terminal'
-			echo '2.Delete macs'	
+			echo '2.Delete macs'
 			echo 'Check rules'
 			echo 'config access_profile profile_id 3 delete access_id (num of rule)'
 			echo 'or the next:'
@@ -512,10 +585,13 @@ function dlink {
 			echo '5.And billing!(lines, equipment, macs, ip)'
 			echo '6.Write the changes into the journal!'
 		;;
+                *)echo "Incorrect keyword: $2"
+                    echo "Possible endings: mac, vlan, port, error, abon"
+                    ;;
         esac;;
-        'reboot') 
+        'reboot')
 		echo 'config ports (nport) state enable/disable';;
-        *) echo 'something went wrong..';;
+        *) echo "Incorrect keyword $1" ; echo 'Possible endings: show, add, delete, reboot';;
     esac
 }
 case $1 in
@@ -525,6 +601,8 @@ case $1 in
     'fox62') fox62 "$@" ;; #4
     'linksys') linksys "$@" ;; #5
     'dlink') dlink "$@" ;; #6
+    *) echo "Incorrect keyword $1"
+    echo 'Possible endings: zyxel, zyxel35, fox60, fox62, linksys, dlink';;
 esac
 echo ''
 exit
