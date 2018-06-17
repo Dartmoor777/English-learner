@@ -14,11 +14,17 @@ MainWindow::MainWindow(QWidget *parent) :
         base.close ();
     }else{
         QTextStream stream(&base);
-        QString boof;
+        QStringList browsedWords;
+
         while(!stream.atEnd ()){
-            stream >> boof;
-            words.insert (boof.section(';', 0, 0), boof.section (';',1,1));
+            browsedWords = stream.readLine().split(';');
+            if (browsedWords.count() != WORDS_AMOUNT) {
+                continue;
+            }
+            words.insert (browsedWords.at(WORD),
+                         browsedWords.at(TRANSLATION));
         }
+
         QMap<QString, QString>::iterator it = words.begin ();
         if(it.key ()=="")words.erase (it);
         change = words.size ();
@@ -52,16 +58,44 @@ void MainWindow::on_actionBrowse_cards_triggered()
 void MainWindow::on_action_Help_triggered()
 {
     QMessageBox box;
-    box.information (this, "Help", "I hope you will find out how it works :)");
+    box.information (this, "Допомога", "Програма має всього дві кнопки," "\n"
+                                       "1. \"Додати\" - додає слово на тренування." "\n"
+                                       "2. \"Тренування\" - тренування доданих слів." "\n""\n"
+
+                                       "Кнопка \"додати\" — відкриває вікно," "\n"
+                                       "де користувачу треба ввести слово та переклад.""\n"
+                                       "Максимальна довжина слова 30 символів.""\n"
+                                       "Кнопка \"Тренування\" — відкриває меню можливих тренувань.""\n""\n"
+
+                                        "Вікно тренувань має наступні функції:""\n"
+                                       "\"Слово - Переклад\" — треба з запропонованих варіантів""\n"
+                                       "вибрати правильний переклад.""\n"
+                                       "\"Переклад - Слово\" —  Вправа аналогічна до попередньої,""\n"
+                                       "з тією різницею, що треба вибрати правильне слово.""\n"
+                                       "\"Куб - Слово\" — тренування полягає в тому,""\n"
+                                       "що слово розбивається на \"куби\" і з цих кубів треба знову зібрати слово.""\n"
+                                       "В якості підказки присутній переклад слова, яке має бути зібраним.""\n"
+                                       "\"Мозковий штурм\" — вправа \"все і відразу\",""\n"
+                                       "включає в себе три вище перечислені вправи""\n"
+                                       "та перед їх початком короткий перегляд слів.""\n""\n"
+
+                                       "Для запуску будь-якої з вправ треба додати мінімум 5 слів.""\n"
+                                       "Додані слова мають два стани: \"вивчене\" та \"вивчається\".""\n"
+                                       "Слово вважається вивченим тільки після вправи \"Мозковий штурм\".""\n"
+                                       "Перегляд слів та їх редагування/видалення можна здійснити в""\n"
+                                       "\"Налаштування -> Перегляд слів\".""\n"
+                                       "Крім слова та перекладу є можливість редагувати і стан слова,""\n"
+                                       "якщо є бажання повторити вивчене знову."
+                     );
     box.show ();
 }
 
 void MainWindow::on_action_Program_triggered()
 {
     QMessageBox box;
-    box.information (this, "About", "This program was created by Alex Putin.\n"
-																																								"If you want to support me,\n"
-                     "just make some donation or suggest your help\n"
-                                    "to my project :)");
+    box.information (this, "Про програму", "Розробник цієї програми студент  41-РПЗ групи,""\n"
+                                           "Київського державного коледжу туризму та готельного господарства" "\n"
+                                            "Путін Олександр Геннадійович."
+                                    );
     box.show ();
 }

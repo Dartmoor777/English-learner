@@ -42,7 +42,7 @@ void learn::word_trans (){
 }
 
 void learn::next(){
-        ui->pushButton_7->setText ("Don't know");
+        ui->pushButton_7->setText (DUNNO_WORD);
         if((ui->pushButton->isEnabled ()) && (!ui->pushButton->text().isEmpty ())){
             disable();
             return;
@@ -119,7 +119,7 @@ QString learn::getrand(bool IsItKey, QString except){
 
 void learn::disable (){
     for(int n=1;n<=5;n++)getButton (n)->setDisabled (true);
-    ui->pushButton_7->setText ("Next");
+    ui->pushButton_7->setText (NEXT_WORD);
 }
 
 void learn::trans_word (){
@@ -197,9 +197,18 @@ void learn::on_pushButton_6_clicked()
 }
 
 void learn::keyPressEvent( QKeyEvent *e) {
-        if((e->key()==Qt::Key_1) ||  (e->key()==Qt::Key_2) || (e->key()==Qt::Key_3) || (e->key()==Qt::Key_4 || (e->key()==Qt::Key_5))/*&& (key->type ()==QKeyEvent::KeyPress)*/){
+        if((e->key()==Qt::Key_1) ||  (e->key()==Qt::Key_2) ||
+           (e->key()==Qt::Key_3) || (e->key()==Qt::Key_4 ||
+           (e->key()==Qt::Key_5))/*&& (key->type ()==QKeyEvent::KeyPress)*/)
+        {
         disable();
         }
-        if((e->key () == Qt::Key_Return)&&(!ui->pushButton->isHidden ()))next();
-        if((e->key () == Qt::Key_Return)&&(ui->pushButton->isHidden ()))introNext();
+
+        if((e->key () == Qt::Key_Return)&&(!ui->pushButton->isHidden ())) {
+            next();
+        }
+
+        if((e->key () == Qt::Key_Return)&&(ui->pushButton->isHidden ())) {
+            introNext();
+        }
 }

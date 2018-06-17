@@ -280,7 +280,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Word</string>
+          <string>Слово</string>
          </property>
          <property name="buddy">
           <cstring>lineEdit</cstring>
@@ -307,7 +307,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Translation</string>
+          <string>Переклад</string>
          </property>
          <property name="buddy">
           <cstring>lineEdit_2</cstring>
@@ -334,7 +334,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Learned</string>
+          <string>Вивчене</string>
          </property>
         </widget>
        </item>
@@ -347,7 +347,7 @@
           </font>
          </property>
          <property name="text">
-          <string>On learning</string>
+          <string>Вивчається</string>
          </property>
         </widget>
        </item>
@@ -383,7 +383,7 @@
           <enum>Qt::StrongFocus</enum>
          </property>
          <property name="text">
-          <string>Ok</string>
+          <string>ОК</string>
          </property>
          <property name="shortcut">
           <string>Return</string>
@@ -402,7 +402,7 @@
           <enum>Qt::StrongFocus</enum>
          </property>
          <property name="text">
-          <string>Cancel</string>
+          <string>Відміна</string>
          </property>
          <property name="shortcut">
           <string>Esc</string>

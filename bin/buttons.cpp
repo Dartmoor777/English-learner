@@ -41,7 +41,7 @@ void buttons::on_pushButton_32_clicked(){
         if((ui->label_2->isEnabled ()) && (!ui->label->text ().isEmpty ())){
             ui->label_2->setText (current);
             ui->label_2->setDisabled (true);
-            ui->pushButton_32->setText ("Next");
+            ui->pushButton_32->setText (NEXT_WORD);
             disable();
             return;
         }
@@ -50,7 +50,7 @@ void buttons::on_pushButton_32_clicked(){
              on_pushButton_31_clicked ();
             return;
         }
-        ui->pushButton_32->setText ("Don't know");
+        ui->pushButton_32->setText (DUNNO_WORD);
         ui->label_2->setText ("");
         ui->label_2->setDisabled (false);
         disable();
@@ -125,7 +125,6 @@ void buttons::on_pushButton_4_clicked()
 void buttons::on_pushButton_8_clicked()
 {
     installButton(ui->pushButton_8);
-
 }
 
 void buttons::on_pushButton_9_clicked()

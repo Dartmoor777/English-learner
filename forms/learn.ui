@@ -1036,7 +1036,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Cancel</string>
+          <string>Відміна</string>
          </property>
          <property name="shortcut">
           <string>Esc</string>
@@ -1052,7 +1052,7 @@
           </size>
          </property>
          <property name="text">
-          <string>Next</string>
+          <string>Наступне</string>
          </property>
          <property name="shortcut">
           <string>Return</string>
@@ -1157,7 +1157,7 @@
           </palette>
          </property>
          <property name="text">
-          <string>esc</string>
+          <string>Esc</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1258,7 +1258,7 @@
           </palette>
          </property>
          <property name="text">
-          <string>enter</string>
+          <string>Enter</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>

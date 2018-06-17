@@ -4,6 +4,11 @@
 #include "QtWidgets"
 #include "mainwin.h"
 
+
+#define NEXT_WORD "наступне"
+#define DUNNO_WORD "не знаю"
+
+
 namespace Ui {
 class study;
 }

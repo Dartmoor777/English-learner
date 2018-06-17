@@ -13,8 +13,12 @@ edit::edit(QWidget *parent, QTableWidget *table, int row, QMap<QString, QString>
     ui->lineEdit->setText (table->item (row, 0)->text ());
     current = ui->lineEdit->text ();
     ui->lineEdit_2->setText (table->item (row, 1)->text ());
-    if(table->item (row,2)->text ()=="learned")ui->radioButton_2->setChecked (true);
-    else ui->radioButton->setChecked (true);
+
+    if(table->item (row,2)->text ()=="learned") {
+        ui->radioButton_2->setChecked (true);
+    } else {
+        ui->radioButton->setChecked (true);
+    }
 }
 
 edit::~edit()
@@ -31,8 +35,13 @@ void edit::on_pushButton_2_clicked()
 {
     table->item (row, 0)->setText (ui->lineEdit->text ());
     table->item (row, 1)->setText (ui->lineEdit_2->text ());
-    if(ui->radioButton_2->isChecked ())table->item (row, 2)->setText ("learned");
-    else table->item (row, 2)->setText ("on learning");
+
+    if(ui->radioButton_2->isChecked ()) {
+        table->item (row, 2)->setText ("learned");
+    } else {
+        table->item (row, 2)->setText ("on learning");
+    }
+
     on_pushButton_clicked ();
 }
 

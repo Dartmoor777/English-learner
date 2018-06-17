@@ -57,7 +57,7 @@ void study::on_pushButton_5_clicked()
 bool study::check(){
     if(words->size ()<5){
         QMessageBox box;
-        box.warning (this, "Warning", "You have to have at least 5 words!");
+        box.warning (this, "Попередження!", "Для початку вправи має бути щонайменше 5 слів!");
         return true;
     }else return false;
 }

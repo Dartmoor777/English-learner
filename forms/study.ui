@@ -53,7 +53,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Word - Translation</string>
+        <string>Слово - Переклад</string>
        </property>
       </widget>
      </item>
@@ -78,7 +78,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Translation - Word</string>
+        <string>Переклад - Слово</string>
        </property>
       </widget>
      </item>
@@ -103,7 +103,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Cube - Word</string>
+        <string>Куб - Слово</string>
        </property>
       </widget>
      </item>
@@ -198,7 +198,7 @@
           </font>
          </property>
          <property name="text">
-          <string>Words left</string>
+          <string>Слів залишилось</string>
          </property>
         </widget>
        </item>
@@ -251,7 +251,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Research</string>
+        <string>Мозковий штурм</string>
        </property>
       </widget>
      </item>
@@ -276,7 +276,7 @@
         </font>
        </property>
        <property name="text">
-        <string>Back</string>
+        <string>Назад</string>
        </property>
       </widget>
      </item>

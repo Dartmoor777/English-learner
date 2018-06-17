@@ -25,6 +25,10 @@ private slots:
 
     void on_add_finished();
 
+    void on_lineEdit_2_textEdited(const QString &arg1);
+
+    bool checkLineEdit(QLineEdit *lineEdit, const QString &arg1);
+
 private:
     Ui::add *ui;
     QPalette palette;

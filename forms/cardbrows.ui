@@ -159,7 +159,7 @@
    <string>Cards Browser</string>
   </property>
   <property name="windowIcon">
-   <iconset resource="Sourse/sourse.qrc">
+   <iconset resource="../Sourse/sourse.qrc">
     <normaloff>:/new/img/icon</normaloff>:/new/img/icon</iconset>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -189,7 +189,7 @@
           <enum>Qt::TabFocus</enum>
          </property>
          <property name="text">
-          <string>Remove</string>
+          <string>Видалити</string>
          </property>
         </widget>
        </item>
@@ -215,7 +215,30 @@
           <enum>Qt::TabFocus</enum>
          </property>
          <property name="text">
-          <string>Edit</string>
+          <string>Редагувати</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer_4">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeType">
+          <enum>QSizePolicy::Preferred</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton_3">
+         <property name="text">
+          <string>Вихід</string>
          </property>
         </widget>
        </item>
@@ -340,7 +363,7 @@
   </layout>
  </widget>
  <resources>
-  <include location="Sourse/sourse.qrc"/>
+  <include location="../Sourse/sourse.qrc"/>
  </resources>
  <connections/>
 </ui>

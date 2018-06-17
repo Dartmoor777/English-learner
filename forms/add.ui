@@ -285,7 +285,7 @@
    <string>Dialog</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../Sourse/sourse.qrc">
     <normaloff>:/new/img/icon</normaloff>:/new/img/icon</iconset>
   </property>
   <property name="modal">
@@ -347,7 +347,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Word</string>
+      <string>Слово</string>
      </property>
     </widget>
    </item>
@@ -419,7 +419,7 @@
       </font>
      </property>
      <property name="text">
-      <string>Translation</string>
+      <string>Переклад</string>
      </property>
     </widget>
    </item>
@@ -560,7 +560,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>Add</string>
+        <string>Додати</string>
        </property>
        <property name="shortcut">
         <string>Return</string>
@@ -656,7 +656,7 @@
         <enum>Qt::NoFocus</enum>
        </property>
        <property name="text">
-        <string>Cancel</string>
+        <string>Відміна</string>
        </property>
        <property name="shortcut">
         <string>Esc</string>
@@ -667,6 +667,8 @@
    </item>
   </layout>
  </widget>
- <resources/>
+ <resources>
+  <include location="../Sourse/sourse.qrc"/>
+ </resources>
  <connections/>
 </ui>

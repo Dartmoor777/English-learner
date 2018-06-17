@@ -375,7 +375,7 @@
    <string>English Learner</string>
   </property>
   <property name="windowIcon">
-   <iconset>
+   <iconset resource="../Sourse/sourse.qrc">
     <normaloff>:/new/img/icon</normaloff>:/new/img/icon</iconset>
   </property>
   <widget class="QWidget" name="centralWidget"/>
@@ -385,24 +385,24 @@
      <x>0</x>
      <y>0</y>
      <width>783</width>
-     <height>19</height>
+     <height>20</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuMain">
     <property name="title">
-     <string>&amp;Main</string>
+     <string>Меню</string>
     </property>
     <addaction name="action_Exit"/>
    </widget>
    <widget class="QMenu" name="menu_Settings">
     <property name="title">
-     <string>&amp;Settings</string>
+     <string>&amp;Налаштування</string>
     </property>
     <addaction name="actionBrowse_cards"/>
    </widget>
    <widget class="QMenu" name="menu_About">
     <property name="title">
-     <string>&amp;About</string>
+     <string>Про програму</string>
     </property>
     <addaction name="action_Help"/>
     <addaction name="action_Program"/>
@@ -418,27 +418,29 @@
   </widget>
   <action name="actionBrowse_cards">
    <property name="text">
-    <string>Browse cards</string>
+    <string>Перегляд слів</string>
    </property>
   </action>
   <action name="action_Exit">
    <property name="text">
-    <string>&amp;Exit</string>
+    <string>&amp;Вихід</string>
    </property>
   </action>
   <action name="action_Help">
    <property name="text">
-    <string>&amp;Help</string>
+    <string>&amp;Допомога</string>
    </property>
   </action>
   <action name="action_Program">
    <property name="text">
-    <string>&amp;Program</string>
+    <string>&amp;Програма</string>
    </property>
   </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="../Sourse/sourse.qrc"/>
+ </resources>
  <connections>
   <connection>
    <sender>action_Exit</sender>

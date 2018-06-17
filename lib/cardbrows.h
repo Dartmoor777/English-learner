@@ -7,6 +7,13 @@ namespace Ui {
 class cardBrows;
 }
 
+enum csvWords {
+    WORD,
+    TRANSLATION,
+    WORDS_AMOUNT,
+};
+
+
 class cardBrows : public QDialog
 {
     Q_OBJECT
@@ -22,6 +29,8 @@ private slots:
 
 
     void on_cardBrows_finished();
+
+    void on_pushButton_3_clicked();
 
 private:
     QMap<QString, QString> *words;
